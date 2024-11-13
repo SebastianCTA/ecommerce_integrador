@@ -1,0 +1,31 @@
+<nav class="navbar bg-body-light shadow-sm fixed-top shadow-sm" style="background-color: rgba(255, 255, 255, 0.797); backdrop-filter: blur(10px);">
+  <div class="container container-fluid">
+      <div class="">
+          <button class="btn btn-principal-head mx-1 mx-md-2 px-2" type="button" [routerLink]="['/']"
+                  routerLinkActive="btn-principal-head-clicked" [routerLinkActiveOptions]="{ exact: true }">
+                  <!-- <i class="bi fs-6" [ngClass]="{'bi-house-fill': router.isActive('/', true), 'bi-house': !router.isActive('/', true)}"></i> -->
+                  <span class="d-none d-md-inline">&nbsp; Inicio</span>
+              </button>
+
+              <button class="btn btn-principal-head mx-1 mx-md-2 px-2" type="button"
+                  [routerLink]="['/producto']" routerLinkActive="btn-principal-head-clicked">
+                  <!-- <i class="bi fs-6" [ngClass]="{'bi-shop': router.isActive('/producto', false), 'bi-shop-window': !router.isActive('/producto', false)}"></i> -->
+                  <span class="d-none d-md-inline">&nbsp; Tienda</span>
+              </button>
+
+              <button class="btn btn-principal-head mx-1 mx-md-2 px-2" type="button"
+                  [routerLink]="['/niveles']" routerLinkActive="btn-principal-head-clicked">
+                  <!-- <i class="bi fs-6" [ngClass]="{'bi-bar-chart-line-fill': router.isActive('/niveles', true), 'bi-bar-chart-line': !router.isActive('/niveles', true)}"></i> -->
+                  <span class="d-none d-md-inline">&nbsp; Niveles</span>
+              </button>
+      </div>
+
+      <a class="navbar-brand" [routerLink]="['/']">
+          <img src="../../../../../assets/imgs/logo-principal.jpg" alt="Logo" width="100" class="d-inline-block align-text-top">
+      </a>
+
+      <div class="">
+          <button class="btn btn-primary" [routerLink]="['/auth']" type="button">Ingresar</button>
+      </div>
+  </div>
+</nav>

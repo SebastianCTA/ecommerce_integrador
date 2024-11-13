@@ -1,0 +1,175 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globales */
+* {
+  font-family: 'Poppins', sans-serif;
+  /* Poppins para todo el contenido */
+  font-size: 0.9rem;
+}
+
+/* Títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  /* Montserrat para títulos */
+}
+
+::selection {
+  background-color: #abebff;
+  color: #000;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(var(--bs-body-bg-rgb), 0.3);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(102, 102, 102);
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../src/fonts/Montserrat-Regular.ttf');
+  src: local('../src/fonts/Montserrat-Regular'),
+      url('fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../src/fonts/Montserrat-Italic.ttf');
+  src: local('../src/fonts/Montserrat-Italic'),
+      url('fonts/Montserrat-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../src/fonts/Montserrat-Bold.ttf');
+  src: local('../src/fonts/Montserrat-Bold'),
+      url('fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../src/fonts/Montserrat-BoldItalic.ttf');
+  src: local('../src/fonts/Montserrat-BoldItalic'),
+      url('fonts/Montserrat-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../src/fonts/Montserrat-Light.ttf');
+  src: local('../src/fonts/Montserrat-Light'),
+      url('fonts/Montserrat-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../src/fonts/Montserrat-LightItalic.ttf');
+  src: local('../src/fonts/Montserrat-LightItalic'),
+      url('fonts/Montserrat-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/fonts/Poppins-Light.ttf');
+  src: local('../src/fonts/Poppins-Light'),
+      url('fonts/Poppins-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/fonts/Poppins-LightItalic.ttf');
+  src: local('../src/fonts/Poppins-LightItalic'),
+      url('fonts/Poppins-LightItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/fonts/Poppins-SemiBold.ttf');
+  src: local('../src/fonts/Poppins-SemiBold'),
+      url('fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/fonts/Poppins-SemiBoldItalic.ttf');
+  src: local('../src/fonts/Poppins-SemiBoldItalic'),
+      url('fonts/Poppins-SemiBoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/fonts/Poppins-ExtraLight.ttf');
+  src: local('../src/fonts/Poppins-ExtraLight'),
+      url('fonts/Poppins-ExtraLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/fonts/Poppins-ExtraLightItalic.ttf');
+  src: local('../src/fonts/Poppins-ExtraLightItalic'),
+      url('fonts/Poppins-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/fonts/Poppins-Regular.ttf');
+  src: local('../src/fonts/Poppins-Regular.ttf'),
+      url('fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/fonts/Poppins-Italic.ttf');
+  src: local('../src/fonts/Poppins-Italic'),
+      url('fonts/Poppins-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}

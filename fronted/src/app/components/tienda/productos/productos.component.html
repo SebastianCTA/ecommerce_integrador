@@ -1,0 +1,229 @@
+<div class="container mt-5">
+  <div class="row">
+    <!-- Input de búsqueda y botón "Agregar+" alineados a la derecha -->
+    <div class="d-flex align-items-center">
+      <div class="input-group me-2">
+        <input
+          type="text"
+          placeholder="Buscar producto"
+          class="form-control"
+          [(ngModel)]="filtro"
+          (input)="filtrarProductos()"
+          aria-describedby="basic-addon2"
+        />
+        <span class="input-group-text btn btn-light" id="basic-addon2">
+          <i class="bi bi-search text-primary"></i>
+        </span>
+      </div>
+
+      <!-- Botón para abrir el modal -->
+      <button
+        class="btn btn-primary ms-2"
+        (click)="agregarProducto()"
+        style="white-space: nowrap"
+      >
+        + Agregar
+      </button>
+
+      <!-- Modal con pestañas Características, Precio, Imágenes y Ficha Técnica -->
+      <div
+        class="modal fade mt-5"
+        id="productoModal"
+        tabindex="-1"
+        aria-labelledby="productoModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="productoModalLabel">
+                {{ modoEdicion ? "Modificar Producto" : "Agregar Producto" }}
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- Pestañas -->
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="caracteristicas-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#caracteristicas"
+                    type="button"
+                    role="tab"
+                    aria-controls="caracteristicas"
+                    aria-selected="true"
+                  >
+                    Características
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="precio-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#precio"
+                    type="button"
+                    role="tab"
+                    aria-controls="precio"
+                    aria-selected="false"
+                  >
+                    Precio
+                  </button>
+                </li>
+              </ul>
+
+              <!-- Contenido de las pestañas -->
+              <div class="tab-content mt-3" id="myTabContent">
+                <!-- Pestaña Características -->
+                <div
+                  class="tab-pane fade show active"
+                  id="caracteristicas"
+                  role="tabpanel"
+                  aria-labelledby="caracteristicas-tab"
+                >
+                  <div class="row">
+                    <!-- Primera columna: Nombre del producto y Descripción -->
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label for="nombreProducto" class="form-label"
+                          >Nombre a quien se envía
+                          <span class="text-danger">*</span></label
+                        >
+                        <input
+                          type="text"
+                          id="nombreProducto"
+                          [(ngModel)]="productoSeleccionado.nombre"
+                          class="form-control"
+                          required
+                          placeholder="Nombre del producto"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="descripcionProducto" class="form-label"
+                          >Descripción <span class="text-danger">*</span></label
+                        >
+                        <textarea
+                          id="descripcionProducto"
+                          [(ngModel)]="productoSeleccionado.descripcion"
+                          class="form-control"
+                          required
+                          placeholder="Descripción del producto"
+                          rows="8"
+                        >
+                        </textarea>
+                      </div>
+                    </div>
+                    <!-- Segunda columna:  -->
+                    <div class="col-md-6">
+                      <div
+                        class="mb-3 d-flex flex-column flex-xl-row justify-content-xl-between w-100 gap-3"
+                      >
+                        <div class="col">
+                          <label for="unidadMedidaProducto" class="form-label"
+                            >Talla de Terno</label
+                          >
+                          <input
+                            type="text"
+                            id="unidadMedidaProducto"
+                            [(ngModel)]="productoSeleccionado.unidad_medida"
+                            class="form-control"
+                            placeholder="Unidad de medida"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="mb-3 d-flex flex-column flex-xl-row justify-content-xl-between w-100 gap-3"
+                      >
+                        <div class="mb-3">
+                          <label for="videoProducto" class="form-label"
+                            >Modelo del Saco</label
+                          >
+                          <input
+                            type="text"
+                            id="videoProducto"
+                            [(ngModel)]="productoSeleccionado.url"
+                            class="form-control"
+                            placeholder="Enlace de video"
+                          />
+                        </div>
+                      </div>
+
+                      <div
+                        class="mb-3 d-flex flex-column flex-xl-row justify-content-xl-between w-100 gap-3"
+                      >
+                        <div class="mb-3">
+                          <label for="cantidadProducto" class="form-label"
+                            >Cantidad del Producto
+                            <span class="text-danger">*</span></label
+                          >
+                          <input
+                            type="number"
+                            id="cantidadProducto"
+                            [(ngModel)]="productoSeleccionado.cantidad"
+                            class="form-control"
+                            placeholder="Cantidad del producto"
+                            [readonly]="modoEdicion"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Pestaña Tela -->
+                    <div
+                      class="tab-pane fade"
+                      id="precio"
+                      role="tabpanel"
+                      aria-labelledby="precio-tab"
+                    >
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label for="precioProducto" class="form-label"
+                              >Precio del Producto
+                              <span class="text-danger">*</span></label
+                            >
+                            <input
+                              type="number"
+                              id="precioProducto"
+                              [(ngModel)]="productoSeleccionado.precio"
+                              class="form-control"
+                              placeholder="Precio del producto"
+                              [readonly]="modoEdicion"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-6"></div>
+                      </div>
+                    </div>
+
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button type="button" class="btn btn-primary">
+                        Save changes
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
