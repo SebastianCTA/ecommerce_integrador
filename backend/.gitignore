@@ -1,3 +1,11 @@
 firebase-key.json
 db.js
 firebaseConfig.js
+
+
+*.env
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
