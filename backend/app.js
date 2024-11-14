@@ -1,25 +1,41 @@
-// Importar las dependencias necesarias
-const express = require('express');
-const cors = require('cors');
-
-// Crear la aplicación Express
+"use strict";
+require('dotenv').config();
+const express = require("express");
+const bodyParser = require('body-parser');
+const http = require("http");
+const cors = require("cors");
+const connectDB = require('./db'); // Archivo para conectar a la base de datos
 const app = express();
+const server = http.createServer(app);
 
-// Definir el puerto del backend (4201 en este caso)
-const port = 4201;
+// Importación de rutas
+const usuarioRoutes = require('./routes/usuarioRoutes');
 
-// Usar CORS para permitir que tu frontend (Angular) se comunique con el backend
-app.use(cors());
+// Configuración de middlewares
+app.use(cors({ origin: "*" }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: '50mb', extended: true }));
 
-// Middleware para parsear el body de las solicitudes en formato JSON
-app.use(express.json());
+// Configuración de rutas
+app.use('/api/usuario', usuarioRoutes);
 
-// Definir una ruta de ejemplo
+// Ruta principal de prueba
 app.get('/', (req, res) => {
-    res.send('¡Servidor de Node.js funcionando correctamente en el puerto 4201!');
+    res.send('¡Servidor funcionando correctamente!');
 });
 
-// Iniciar el servidor
-app.listen(port, () => {
-    console.log(`Servidor backend corriendo en http://localhost:${port}`);
-});
+// Configuración del puerto
+const port = process.env.PORT || 4201;
+
+// Conexión a la base de datos y arranque del servidor
+connectDB()
+    .then(() => {
+        server.listen(port, () => {
+            console.log(`Servidor backend corriendo en http://localhost:${port}`);
+        });
+    })
+    .catch((err) => {
+        console.error("Error al conectar con la base de datos:", err);
+    });
+
+module.exports = app;

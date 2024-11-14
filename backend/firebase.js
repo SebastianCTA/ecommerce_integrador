@@ -1,8 +1,10 @@
-import admin from 'firebase-admin';
-import serviceAccount from './firebase-key.json'; // Asegúrate de descargar el archivo de credenciales de Firebase
+const admin = require('firebase-admin');
+const serviceAccount = require('./firebase-key.json'); // Ruta al archivo de credenciales
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
+  storageBucket: 'gs://your-firebase-bucket.appspot.com' // Opcional si usas Firebase Storage
 });
 
-export default admin;
+// Exporta la instancia de Firebase Authentication
+module.exports = admin.auth();
