@@ -1,27 +1,69 @@
-<div class="axil-signin-area">
-  <div class="row vh-100">
-    <!-- Columna de la imagen -->
-    <div class="col-lg-6 d-none d-lg-flex p-0">
-      <img src="./assets/images/fondo-login.jpg" alt="Recuperar Contraseña" class="img-fluid w-100 h-100 object-fit-cover">
-    </div>
+<div class="row w-100" id="padre">
+  <div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex align-items-center" id="hijo1">
 
-    <!-- Columna del formulario -->
-    <div class="col-lg-6 d-flex align-items-center justify-content-center">
-      <div class="axil-signin-form-wrap w-75 px-5">
-        <div class="axil-signin-form text-center">
-          <h3 class="title mb-4">Recuperar Contraseña</h3>
-          <p class="b2 mb-4">Ingresa tu correo electrónico para recibir un enlace de recuperación.</p>
-          <form class="singin-form">
-            <div class="form-group mb-4">
-              <label for="email" class="mb-2">Correo electrónico</label>
-              <input type="email" id="email" class="form-control" name="email" placeholder="ejemplo@dominio.com" required>
+    <div class="row px-0">
+      <h3 class="text-center fw-bold">Inicia sesión</h3>
+
+      <form autocomplete="off" class="px-0">
+        <!-- Campo de correo -->
+        <div class="row w-100 d-flex justify-content-center">
+          <div class="col-10 mt-4">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="text" class="form-control" id="email" placeholder="Ingresa tu correo">
+          </div>
+        </div>
+
+        <!-- Campo de contraseña -->
+        <div class="row w-100 d-flex justify-content-center">
+          <div class="col-10 mt-4">
+            <label for="password" class="form-label">Contraseña</label>
+            <div class="input-group">
+              <input type="password" class="form-control py-2" id="password" placeholder="Ingresa tu contraseña">
+              <a class="btn btn-light">
+                <i class="bi bi-eye" aria-hidden="true"></i>
+              </a>
             </div>
-            <div class="form-group text-center">
-              <button type="submit" class="axil-btn btn-bg-primary submit-btn">Enviar correo</button>
+          </div>
+        </div>
+
+        <!-- Campo de mantener sesión -->
+        <div class="form-check d-flex justify-content-center mt-3">
+          <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            &nbsp; &nbsp; Mantener mi sesión iniciada
+          </label>
+        </div>
+
+        <!-- Botón de iniciar sesión -->
+        <div class="row w-100 d-flex justify-content-center">
+          <div class="col-10 mt-4">
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary float-end">Iniciar sesión</button>
             </div>
-          </form>
+          </div>
+        </div>
+      </form>
+
+      <!-- Opciones adicionales -->
+      <div class="row w-100 d-flex justify-content-center">
+        <div class="col-10 mt-4 text-center">
+          <a class="fw-bold text-primary text-none pointer" href="/auth/forgot-password">Olvidé mi contraseña</a>
+          <br>
+          <p class="mt-4">
+            ¿Aún no tienes cuenta?
+            <a class="fw-bold text-primary text-none pointer" href="/auth/registro">Regístrate</a>
+          </p>
+          <p class="mt-4">
+            <a class="fw-bold text-primary text-none pointer" href="/">
+              <i class="bi bi-arrow-left"></i> &nbsp; Volver al inicio
+            </a>
+          </p>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="col-12 col-md-6 col-lg-8 col-xl-9 py-3 px-0" id="hijo2">
+    <img src="../../../../assets/images/fondo-login.svg" alt="Imagen campo vector" class="rounded image">
   </div>
 </div>
