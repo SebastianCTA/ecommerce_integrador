@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/public/home/home.component';
 import { FooterComponent } from './components/public/shared/footer/footer.component';
 import { HeaderComponent } from './components/public/shared/header/header.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HeaderComponent } from './components/public/shared/header/header.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule  // Importa AppRoutingModule
+    AppRoutingModule,  // Importa AppRoutingModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

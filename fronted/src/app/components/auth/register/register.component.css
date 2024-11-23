@@ -1,0 +1,33 @@
+#padre {
+  flex-direction: column-reverse;
+}
+
+@media(min-width: 768px) {
+  #padre {
+      flex-direction: row;
+  }
+
+  #hijo1 {
+      order: 1;
+  }
+
+  #hijo2 {
+      order: 2;
+      height: 100vh !important;
+  }
+}
+
+#hijo2 {
+  height: 300px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.danger {
+  background-color: var(--bs-danger-bg);
+  border-radius: 4px;
+}
