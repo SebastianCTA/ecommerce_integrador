@@ -22,6 +22,11 @@
           <app-productos></app-productos>
         </div>
 
+        <div *ngIf="currentView === 'categoria'">
+          <h2>Categorias</h2>
+          <app-categories></app-categories>
+        </div>
+
 
       </div>
       <div class="text-blue-gray-600">
