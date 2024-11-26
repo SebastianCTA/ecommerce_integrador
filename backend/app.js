@@ -10,6 +10,8 @@ const server = http.createServer(app);
 
 // Importación de rutas
 const usuarioRoutes = require('./routes/usuarioRoutes');
+const categorieRoutes = require('./routes/categorieRoutes');
+
 
 // Configuración de middlewares
 app.use(cors({ origin: "*" }));
@@ -18,6 +20,7 @@ app.use(bodyParser.json({ limit: '50mb', extended: true }));
 
 // Configuración de rutas
 app.use('/api/usuario', usuarioRoutes);
+app.use('/api/categorie', categorieRoutes);
 
 // Ruta principal de prueba
 app.get('/', (req, res) => {

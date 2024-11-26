@@ -9,6 +9,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EstadisticaComponent } from './estadistica/estadistica.component';
 import { FormsModule } from '@angular/forms';
+import { CategoriesComponent } from './categories/categories.component';
 
 
 
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     SidebarComponent,
     ProductosComponent,
+    CategoriesComponent,
     FooterComponent,
     DashboardComponent,
     EstadisticaComponent
